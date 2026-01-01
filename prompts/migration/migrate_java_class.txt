@@ -1,0 +1,24 @@
+You are migrating Java code from AWS Lambda provided in chunks to Spring Boot.
+
+Java source chunks:
+{source_chunks}
+
+Spring Blueprint:
+{spring_blueprint}
+
+Lambda category:
+{lambda_type}
+
+TASK:
+Rewrite the class for Spring Boot.
+
+REQUIREMENTS:
+- Remove AWS Lambda interfaces
+- Remove Context usage
+- Use constructor injection
+- Preserve business logic
+- Java 17 compatible
+
+OUTPUT:
+- FULL Java class code
+- No explanations

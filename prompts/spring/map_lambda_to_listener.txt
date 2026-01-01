@@ -1,0 +1,25 @@
+You are migrating an event-driven Lambda to Spring Boot.
+
+INPUT:
+- Lambda handler code
+- Event payload models
+- AWS service metadata
+
+TASK:
+Map Lambda invocation to Spring listener mechanisms.
+
+OUTPUT (JSON ONLY):
+{
+  "listeners": [
+    {
+      "type": "SQS | SNS | EVENT | SCHEDULED",
+      "spring_mechanism": "@SqsListener | @EventListener | @Scheduled",
+      "class_name": "ListenerClass",
+      "method": "methodName",
+      "source_lambda_method": "Class.method"
+    }
+  ]
+}
+
+RULES:
+- Prefer Spring Cloud AWS abstractions where applicable

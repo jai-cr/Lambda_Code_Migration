@@ -1,0 +1,32 @@
+You are migrating an API Gateway Lambda to Spring Boot.
+
+INPUT:
+- Lambda handler code
+- Request/response models
+- Entry point metadata
+
+TASK:
+Map Lambda handler logic to Spring REST controller(s).
+
+OUTPUT (JSON ONLY):
+{
+  "controllers": [
+    {
+      "class_name": "ControllerName",
+      "base_path": "/path",
+      "methods": [
+        {
+          "http_method": "GET | POST | PUT | DELETE",
+          "path": "/subpath",
+          "request_model": "ClassName | Map | Void",
+          "response_model": "ClassName | ResponseEntity",
+          "source_lambda_method": "Class.method"
+        }
+      ]
+    }
+  ]
+}
+
+RULES:
+- No Lambda Context
+- Use idiomatic Spring annotations

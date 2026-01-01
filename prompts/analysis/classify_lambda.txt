@@ -1,0 +1,36 @@
+You are analyzing an AWS Java Lambda function for migration to Spring Boot.
+
+LAMBDA SOURCE:
+{handler_code}
+
+POM DEPENDENCIES:
+{dependencies}
+
+TASK:
+Classify the Lambda into ONE primary category. Also identiy the extracting execution entrypoints from Java Lambda code points
+
+CATEGORIES (choose exactly one):
+- API_GATEWAY_REST
+- API_GATEWAY_HTTP
+- EVENT_BRIDGE
+- SQS_CONSUMER
+- SNS_CONSUMER
+- KINESIS_CONSUMER
+- S3_EVENT_HANDLER
+- STEP_FUNCTION_TASK
+- SCHEDULED_CRON
+- CUSTOM_INTERNAL
+
+OUTPUT (JSON ONLY):
+{{
+  "lambda_type": "<CATEGORY>",
+  "confidence": "HIGH | MEDIUM | LOW",
+  "evidence": [
+    "specific class/method/annotation references"
+  ]
+  "entry_points": "provide list of all entry points"
+}}
+
+RULES:
+- Do not explain outside JSON
+- If ambiguous, choose the dominant invocation pattern

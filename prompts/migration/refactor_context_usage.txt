@@ -1,0 +1,15 @@
+You are refactoring AWS Lambda Context usage.
+
+INPUT:
+- Java code using Context, getLogger(), getAwsRequestId()
+
+TASK:
+Replace Context usage with Spring equivalents.
+
+OUTPUT:
+- Updated Java code
+- Use SLF4J logging
+- Use MDC if request ID is needed
+
+RULES:
+- No Lambda imports allowed

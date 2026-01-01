@@ -1,0 +1,26 @@
+You are inspecting Java code to identify AWS service dependencies.
+
+LAMBDA HANDLER SOURCE:
+{handler_code}
+
+POM DEPENDENCIES:
+{dependencies}
+
+TASK:
+Identify all AWS services used directly or indirectly.
+
+OUTPUT (JSON ONLY):
+{{
+  "aws_services": [
+    {{
+      "service": "S3 | DynamoDB | SQS | SNS | EventBridge | StepFunctions | SecretsManager | ParameterStore | Lambda | Other",
+      "usage_type": "SYNC | ASYNC | CONFIG | INVOCATION",
+      "classes": ["ClassName1", "ClassName2"],
+      "sdk_version": "v1 | v2 | unknown"
+    }}
+  ]
+}}
+
+RULES:
+- Infer from imports, client builders, environment variables
+- Do not guess services not explicitly used

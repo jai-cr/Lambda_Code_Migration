@@ -1,0 +1,33 @@
+You are designing a Spring Boot 3.x project structure.
+
+LAMBDA CLASSIFICATION:
+{lambda_classification}
+
+ENTRY POINTS:
+{entry_points}
+
+DEPENDENCIES:
+{dependencies}
+
+AWS SERVICES:
+{aws_services}
+
+TASK:
+Propose a Spring Boot project structure.
+
+OUTPUT (JSON ONLY):
+{{
+  "base_package": <Base package of lambda>,
+  "modules": [
+    {{
+      "name": "web | messaging | service | persistence | config",
+      "role": "Controller | Service | Listener",
+      "packages": ["package1", "package2"],
+      "responsibility": "clear description"
+    }}
+  ]
+}}
+
+RULES:
+- Use standard Spring Boot conventions
+- Do not include AWS Lambda concepts

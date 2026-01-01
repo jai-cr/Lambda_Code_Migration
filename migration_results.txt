@@ -1,0 +1,923 @@
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "ASYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "ASYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "ASYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "com.example.app",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": ["com.example.app.web"],
+      "responsibility": "Handles HTTP requests and responses, routing to appropriate services."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": ["com.example.app.service"],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": ["com.example.app.persistence"],
+      "responsibility": "Manages data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": ["com.example.app.config"],
+      "responsibility": "Holds configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "messaging",
+      "role": "Listener",
+      "packages": ["com.example.app.messaging"],
+      "responsibility": "Handles asynchronous messaging and email sending via SES."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "ASYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "com.example.app",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": ["com.example.app.web"],
+      "responsibility": "Handles HTTP requests and responses, maps API Gateway events to service calls."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": ["com.example.app.service"],
+      "responsibility": "Contains business logic and orchestrates interactions between controllers and repositories."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": ["com.example.app.persistence"],
+      "responsibility": "Manages data access and interactions with DynamoDB, including entity mappings."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": ["com.example.app.config"],
+      "responsibility": "Holds configuration classes for application settings, AWS service clients, and security configurations."
+    },
+    {
+      "name": "messaging",
+      "role": "Listener",
+      "packages": ["com.example.app.messaging"],
+      "responsibility": "Handles asynchronous messaging and email sending via AWS SES."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent",
+    "RouteHandler interface is used for handling routes"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest",
+    "PostLoginGenerateHandler.handleRequest",
+    "PostLoginPerformHandler.handle"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "SYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "pl.software2.awsblocks.passwordlessloginservice",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": ["controller"],
+      "responsibility": "Handles incoming HTTP requests and maps them to appropriate service methods."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": ["service"],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": ["repository"],
+      "responsibility": "Handles data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": ["config"],
+      "responsibility": "Contains configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "model",
+      "role": "Domain Model",
+      "packages": ["model"],
+      "responsibility": "Defines the data structures used throughout the application."
+    },
+    {
+      "name": "util",
+      "role": "Utility",
+      "packages": ["util"],
+      "responsibility": "Contains utility classes for common functionalities, such as JWT handling and email sending."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "SYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "pl.software2.awsblocks.passwordlessloginservice",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.web"
+      ],
+      "responsibility": "Handles incoming HTTP requests and maps them to appropriate service methods."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.service"
+      ],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.persistence"
+      ],
+      "responsibility": "Manages data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.config"
+      ],
+      "responsibility": "Contains configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "messaging",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.messaging"
+      ],
+      "responsibility": "Handles sending emails via SES and other messaging-related functionalities."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "SYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "pl.software2.awsblocks.passwordlessloginservice",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.web"
+      ],
+      "responsibility": "Handles incoming HTTP requests and maps them to appropriate service methods."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.service"
+      ],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.persistence"
+      ],
+      "responsibility": "Manages data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.config"
+      ],
+      "responsibility": "Contains configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "messaging",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.messaging"
+      ],
+      "responsibility": "Handles sending emails via SES and other messaging-related functionalities."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "SYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "pl.software2.awsblocks.passwordlessloginservice",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.web"
+      ],
+      "responsibility": "Handles incoming HTTP requests and maps them to appropriate service methods."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.service"
+      ],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.persistence"
+      ],
+      "responsibility": "Handles data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.config"
+      ],
+      "responsibility": "Contains configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "messaging",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.messaging"
+      ],
+      "responsibility": "Handles sending emails via SES and other messaging-related functionalities."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "SYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "pl.software2.awsblocks.passwordlessloginservice",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.web"
+      ],
+      "responsibility": "Handles incoming HTTP requests and maps them to appropriate service methods."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.service"
+      ],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.persistence"
+      ],
+      "responsibility": "Handles data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.config"
+      ],
+      "responsibility": "Contains configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "messaging",
+      "role": "Service",
+      "packages": [
+        "pl.software2.awsblocks.passwordlessloginservice.messaging"
+      ],
+      "responsibility": "Handles sending emails via SES and other messaging-related functionalities."
+    }
+  ]
+}
+First response
+{
+  "lambda_type": "API_GATEWAY_HTTP",
+  "confidence": "HIGH",
+  "evidence": [
+    "LambdaHandler class implements RequestStreamHandler",
+    "handleRequest method processes APIGatewayV2HTTPEvent"
+  ],
+  "entry_points": [
+    "LambdaHandler.handleRequest"
+  ]
+}
+Second response
+{
+  "entrypoints": [
+    {
+      "class": "LambdaHandler",
+      "method": "handleRequest",
+      "signature": "public void handleRequest(InputStream inputStream, OutputStream outputStream, Context context) throws IOException",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginGenerateHandler",
+      "method": "handleRequest",
+      "signature": "@Override protected GenerateTokenResponse handleRequest(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    },
+    {
+      "class": "PostLoginPerformHandler",
+      "method": "handle",
+      "signature": "public APIGatewayV2HTTPResponse handle(APIGatewayV2HTTPEvent request)",
+      "trigger_hint": "API"
+    }
+  ]
+}
+Third response
+{
+  "aws_services": [
+    {
+      "service": "SecretsManager",
+      "usage_type": "CONFIG",
+      "classes": ["LoadJWTTokenSecret", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "SES",
+      "usage_type": "SYNC",
+      "classes": ["SendTokenViaEmail", "AwsModule"],
+      "sdk_version": "v2"
+    },
+    {
+      "service": "DynamoDB",
+      "usage_type": "SYNC",
+      "classes": ["LoginRequests", "Users"],
+      "sdk_version": "v2"
+    }
+  ]
+}
+Blueprint response
+{
+  "base_package": "pl.software2.awsblocks.passwordlessloginservice",
+  "modules": [
+    {
+      "name": "web",
+      "role": "Controller",
+      "packages": ["controller"],
+      "responsibility": "Handles incoming API requests and routes them to the appropriate service methods."
+    },
+    {
+      "name": "service",
+      "role": "Service",
+      "packages": ["service"],
+      "responsibility": "Contains business logic and interacts with persistence layer and external services."
+    },
+    {
+      "name": "persistence",
+      "role": "Repository",
+      "packages": ["repository"],
+      "responsibility": "Handles data access and interactions with DynamoDB."
+    },
+    {
+      "name": "config",
+      "role": "Configuration",
+      "packages": ["config"],
+      "responsibility": "Contains configuration classes for application settings, including AWS service configurations."
+    },
+    {
+      "name": "model",
+      "role": "Domain Model",
+      "packages": ["model"],
+      "responsibility": "Defines the data structures used throughout the application."
+    },
+    {
+      "name": "util",
+      "role": "Utility",
+      "packages": ["util"],
+      "responsibility": "Contains utility classes for common functionalities, such as JWT handling and email sending."
+    }
+  ]
+}

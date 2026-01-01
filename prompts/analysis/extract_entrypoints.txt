@@ -1,0 +1,32 @@
+You are extracting execution entrypoints from Java Lambda code.
+
+LAMBDA SOURCE:
+{handler_code}
+
+POM DEPENDENCIES:
+{dependencies}
+
+TASK:
+Identify all Lambda entrypoints.
+
+ENTRYPOINT TYPES:
+- RequestHandler
+- RequestStreamHandler
+- FunctionHandler method
+- Custom handler via reflection
+
+OUTPUT (JSON ONLY):
+{{
+  "entrypoints": [
+    {{
+      "class": "ClassName",
+      "method": "methodName",
+      "signature": "full method signature",
+      "trigger_hint": "API | EVENT | STREAM | UNKNOWN"
+    }}
+  ]
+}}
+
+RULES:
+- Only include methods that can be invoked by Lambda runtime
+- Ignore helper or utility methods

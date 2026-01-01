@@ -1,0 +1,27 @@
+You are planning dependency injection for migrated code.
+
+INPUT:
+- Java classes
+- Constructors
+- AWS clients
+- Static utility usage
+
+TASK:
+Define how dependencies should be injected in Spring.
+
+OUTPUT (JSON ONLY):
+{
+  "beans": [
+    {
+      "type": "Service | Repository | Client | Config",
+      "class": "ClassName",
+      "scope": "singleton | prototype",
+      "injection": "constructor",
+      "notes": "special considerations"
+    }
+  ]
+}
+
+RULES:
+- Eliminate static access
+- No manual instantiation
